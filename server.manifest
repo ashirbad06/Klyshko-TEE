@@ -1,0 +1,126 @@
+[loader]
+entrypoint = "file:/usr/lib/x86_64-linux-gnu/gramine/libsysdb.so"
+log_level = "error"
+insecure__use_cmdline_argv = true
+insecure__use_host_env = true
+
+[loader.env]
+LD_LIBRARY_PATH = "/lib:/lib2:/usr/local/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu"
+LC_ALL = "C"
+RA_TLS_CLIENT_INSIDE_SGX = "1"
+
+[libos]
+entrypoint = "/server"
+
+[sys]
+enable_sigterm_injection = true
+enable_extra_runtime_domain_names_conf = true
+
+[[fs.mounts]]
+path = "/lib"
+uri = "file:/usr/lib/x86_64-linux-gnu/gramine/runtime/glibc"
+
+[[fs.mounts]]
+path = "/usr/local/lib"
+uri = "file:/usr/local/lib"
+
+[[fs.mounts]]
+path = "/lib/x86_64-linux-gnu"
+uri = "file:/lib/x86_64-linux-gnu"
+
+[[fs.mounts]]
+path = "/usr/lib/x86_64-linux-gnu"
+uri = "file:/usr/lib/x86_64-linux-gnu"
+
+[[fs.mounts]]
+path = "/etc"
+uri = "file:/etc"
+
+[[fs.mounts]]
+path = "/server"
+uri = "file:server"
+
+[[fs.mounts]]
+path = "/Player-Data/"
+uri = "file:Player-Data/"
+
+[[fs.mounts]]
+type = "encrypted"
+path = "/Player-Data/2-p-128/Player-MAC-Keys-p-P0"
+uri = "file:Player-Data/2-p-128/Player-MAC-Keys-p-P0"
+key_name = "_sgx_mrenclave"
+
+[[fs.mounts]]
+type = "encrypted"
+path = "/Player-Data/2-p-128/Player-MAC-Keys-p-P1"
+uri = "file:Player-Data/2-p-128/Player-MAC-Keys-p-P1"
+key_name = "_sgx_mrenclave"
+
+[[fs.mounts]]
+type = "encrypted"
+path = "/Player-Data/2-2-40/Player-MAC-Keys-2-P0"
+uri = "file:Player-Data/2-2-40/Player-MAC-Keys-2-P0"
+key_name = "_sgx_mrenclave"
+
+[[fs.mounts]]
+type = "encrypted"
+path = "/Player-Data/2-2-40/Player-MAC-Keys-2-P1"
+uri = "file:Player-Data/2-2-40/Player-MAC-Keys-2-P1"
+key_name = "_sgx_mrenclave"
+
+[[fs.mounts]]
+path = "/lib2/"
+uri = "file:/lib/x86_64-linux-gnu/"
+
+[[fs.mounts]]
+path = "/Fake-Offline.x"
+uri = "file:Fake-Offline.x"
+
+[sgx]
+debug = true
+edmm_enable = false
+enclave_size = "512M"
+insecure__allow_memfaults_without_exinfo = false
+max_threads = 4
+remote_attestation = "dcap"
+ra_client_spid = ""
+ra_client_linkable = false
+trusted_files = [
+    { uri = "file:/usr/lib/x86_64-linux-gnu/gramine/libsysdb.so" },
+    { uri = "file:server" },
+    { uri = "file:/usr/lib/x86_64-linux-gnu/gramine/runtime/glibc/" },
+    { uri = "file:/usr/local/lib/" },
+    { uri = "file:/lib/x86_64-linux-gnu/" },
+    { uri = "file:/usr/lib/x86_64-linux-gnu/" },
+    { uri = "file:ssl/ca.crt" },
+    { uri = "file:ssl/server.crt" },
+    { uri = "file:ssl/server.key" },
+    { uri = "file:Fake-Offline.x" },
+    { uri = "file:/lib/x86_64-linux-gnu/" },
+    { uri = "file:etc/kii/secret-params/mac_key_share_p" },
+    { uri = "file:etc/kii/secret-params/mac_key_share_2" },
+]
+allowed_files = [
+    "file:/etc/nsswitch.conf",
+    "file:/etc/host.conf",
+    "file:/etc/ethers",
+    "file:/etc/hosts",
+    "file:/etc/group",
+    "file:/etc/passwd",
+    "file:/etc/gai.conf",
+    "file:/etc/ssl/certs/ca-certificates.crt",
+    "file:/etc/sgx_default_qcnl.conf",
+    "file:./Player-Data",
+    "file:/lib/x86_64-linux-gnu",
+]
+isvprodid = 0
+isvsvn = 0
+enable_stats = false
+use_exinfo = false
+
+[sgx.cpu_features]
+avx = "unspecified"
+avx512 = "unspecified"
+amx = "unspecified"
+mpx = "disabled"
+pkru = "disabled"

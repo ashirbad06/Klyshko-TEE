@@ -1,0 +1,185 @@
+Starting player 1 with enclave mr_enclave: cc337a316936cc3fadea9362f591f8b87965592295b5a2eb9c172bdf76f33807 and mr_signer: 581e423ea8652f4e7c4d2ef0366970617f739fa39bffe027f5e619a22103dccf
+Player 1 session complete.
+Gramine is starting. Parsing TOML manifest file, this may take some time...
+-----------------------------------------------------------------------------------------------------------------------
+Gramine detected the following insecure configurations:
+
+  - sgx.debug = true                           (this is a debug enclave)
+  - loader.insecure__use_cmdline_argv = true   (forwarding command-line args from untrusted host to the app)
+  - loader.insecure__use_host_env = true       (forwarding environment vars from untrusted host to the app)
+  - sgx.allowed_files = [ ... ]                (some files are passed through from untrusted host without verification)
+
+Gramine will continue application execution, but this configuration must not be used in production!
+-----------------------------------------------------------------------------------------------------------------------
+
+Entered the CRG main function.
+
+GENERATED SEED ------- :013963caef273344
+Getting environment variables ...kii_job_id_defined: 1920bb26-dsee-dzfw-vdsdsa14fds4
+Player 0 endpoint: 127.0.0.1:1026Player 1 endpoint: 127.0.0.1:1025ok
+Local attestation starts . . .Inside local attestation function
+  . Seeding the random number generator... ok
+
+  . Creating the RA-TLS server cert and key (using "dcap" as attestation type)... ok
+  . Bind on https://localhost:4434/ ... ok
+  . Setting up the SSL data.... ok
+  . Waiting for a remote connection ... ok
+  . Performing the SSL/TLS handshake... ok
+ 75 bytes read 
+ f0cf6099e629fd0bda2de3f9515ab72b'-88222337191559387830816715872691188861
+Received for 1: mackeyshare_2=f0cf6099e629fd0bda2de3f9515ab72b  mackeyshare_p=-88222337191559387830816715872691188861
+Player no: 1 
+mackeyshare_2=f0cf6099e629fd0bda2de3f9515ab72b  mackeyshare_p=-88222337191559387830816715872691188861
+  . Closing the connection... ok
+End of CRG.c local attestation
+******************Player 0:
+Player 0: 
+Player 1: -88222337191559387830816715872691188861
+Player 1: f0cf6099e629fd0bda2de3f9515ab72b
+Remote attestation starts..
+In server code
+Value of a: cc337a316936cc3fadea9362f591f8b87965592295b5a2eb9c172bdf76f33807
+[ using our own SGX-measurement verification callback (via command line options) ]
+  - ignoring ISV_PROD_ID
+  - ignoring ISV_SVN
+ ok
+  . Installing RA-TLS callback ... ok
+  . Seeding the random number generator... ok
+
+  . Creating the RA-TLS server cert and key (using "dcap" as attestation type)... ok
+Extracted port at start in server: 1025
+Extracted ip at start in server: 127.0.0.1
+  . Bind on https://localhost:1025/ ... ok
+  . Setting up the SSL data.... ok
+  . Waiting for a remote connection ... ok
+  . Performing the SSL/TLS handshake...Allowing quote status SW_HARDENING_NEEDED
+ ok
+ ok
+  < Read from client:Writing 93 serialized bytes
+ 33 bytes read: 
+Other player number : 0
+Received: kii_job_id=1920bb26-dsee-dzfw-vdsdsa14fds4
+Received other player_number=0
+kii_job_id: 1920bb26-dsee-dzfw-vdsdsa14fds4
+kii_job_id_defined: 1920bb26-dsee-dzfw-vdsdsa14fds4
+strcmp result: 0
+received_other_player_number: 0
+other_player_number: 0
+ 93 bytes read: 
+Received: mackeyshare_2=f0cf6099e629fd0bda2de3f9515ab72b  mackeyshare_p=-88222337191559387830816715872691188861
+  seeds=01bb36c675b01537
+ADDED SEED IS : 02f49a9164d7487b
+ 93 bytes written
+
+
+ f0cf6099e629fd0bda2de3f9515ab72b'-88222337191559387830816715872691188861013963caef273344
+opened successfully: Success
+opened successfully: Success
+opened successfully: Success
+opened successfully: Success
+WARNING: insecure preprocessing
+Writing to file in Player-Data//2-p-128/
+ Key 0: -88222337191559387830816715872691188861
+ Key 1: -88222337191559387830816715872691188861
+--------------
+Final Key: 22321789146359908270234334183054317319
+ Key 0: 0xffffffffff
+ Key 1: 0xffffffffff
+--------------
+Final Key: 0
+Opening Player-Data//2-2-40/Triples-2-P0
+Opening Player-Data//2-2-40/Triples-2-P1
+Writing to file in Player-Data//2-p-128/
+Opening Player-Data//2-p-128/Triples-p-P0
+Opening Player-Data//2-p-128/Triples-p-P1
+Opening Player-Data//2-2-40/Bits-2-P0
+Opening Player-Data//2-2-40/Bits-2-P1
+Opening Player-Data//2-p-128/Bits-p-P0
+Opening Player-Data//2-p-128/Bits-p-P1
+Opening Player-Data//2-2-40/Squares-2-P0
+Opening Player-Data//2-2-40/Squares-2-P1
+Opening Player-Data//2-p-128/Squares-p-P0
+Opening Player-Data//2-p-128/Squares-p-P1
+Opening Player-Data//2-2-40/Inputs-2-P0-0
+Opening Player-Data//2-2-40/Inputs-2-P1-0
+Opening Player-Data//2-2-40/Inputs-2-P0-1
+Opening Player-Data//2-2-40/Inputs-2-P1-1
+Opening Player-Data//2-p-128/Inputs-p-P0-0
+Opening Player-Data//2-p-128/Inputs-p-P1-0
+Opening Player-Data//2-p-128/Inputs-p-P0-1
+Opening Player-Data//2-p-128/Inputs-p-P1-1
+Opening Player-Data//2-2-40/Inverses-2-P0
+Opening Player-Data//2-2-40/Inverses-2-P1
+Opening Player-Data//2-p-128/Inverses-p-P0
+Opening Player-Data//2-p-128/Inverses-p-P1
+Opening Player-Data//2-DR-64/Triples-DR-P0
+Opening Player-Data//2-DR-64/Triples-DR-P1
+Opening Player-Data//2-DR-64/Bits-DR-P0
+Opening Player-Data//2-DR-64/Bits-DR-P1
+Opening Player-Data//2-DR-64/Inputs-DR-P0-0
+Opening Player-Data//2-DR-64/Inputs-DR-P1-0
+Opening Player-Data//2-DR-64/Inputs-DR-P0-1
+Opening Player-Data//2-DR-64/Inputs-DR-P1-1
+Opening Player-Data//2-DR-64/Squares-DR-P0
+Opening Player-Data//2-DR-64/Squares-DR-P1
+Opening Player-Data//2-DR-64/daBits-DR-P0
+Opening Player-Data//2-DR-64/daBits-DR-P1
+Opening Player-Data//2-DB-64/Triples-DB-P0
+Opening Player-Data//2-DB-64/Triples-DB-P1
+Opening Player-Data//2-DB-64/Bits-DB-P0
+Opening Player-Data//2-DB-64/Bits-DB-P1
+ Key 0: 1347603935684
+ Key 1: 2090224376710
+--------------
+Final Key: 1238805056842
+Opening Player-Data//2-T-64/Triples-T-P0
+Opening Player-Data//2-T-64/Triples-T-P1
+Opening Player-Data//2-T-64/Bits-T-P0
+Opening Player-Data//2-T-64/Bits-T-P1
+Opening Player-Data//2-T-64/Inputs-T-P0-0
+Opening Player-Data//2-T-64/Inputs-T-P1-0
+Opening Player-Data//2-T-64/Inputs-T-P0-1
+Opening Player-Data//2-T-64/Inputs-T-P1-1
+ Key 0: 0x72b85e1589
+ Key 1: 0xcc60b73026
+--------------
+Final Key: 0xbed8e925af
+Opening Player-Data//2-TT-8/Triples-TT-P0
+Opening Player-Data//2-TT-8/Triples-TT-P1
+Opening Player-Data//2-TT-8/Bits-TT-P0
+Opening Player-Data//2-TT-8/Bits-TT-P1
+Opening Player-Data//2-TT-8/Inputs-TT-P0-0
+Opening Player-Data//2-TT-8/Inputs-TT-P1-0
+Opening Player-Data//2-TT-8/Inputs-TT-P0-1
+Opening Player-Data//2-TT-8/Inputs-TT-P1-1
+Opening Player-Data//2-p-128/daBits-p-P0
+Opening Player-Data//2-p-128/daBits-p-P1
+Writing to file in Player-Data//2-Dp-128/
+Opening Player-Data//2-Dp-128/Triples-Dp-P0
+Opening Player-Data//2-Dp-128/Triples-Dp-P1
+Opening Player-Data//2-Dp-128/Bits-Dp-P0
+Opening Player-Data//2-Dp-128/Bits-Dp-P1
+Opening Player-Data//2-Dp-128/Inputs-Dp-P0-0
+Opening Player-Data//2-Dp-128/Inputs-Dp-P1-0
+Opening Player-Data//2-Dp-128/Inputs-Dp-P0-1
+Opening Player-Data//2-Dp-128/Inputs-Dp-P1-1
+Opening Player-Data//2-Dp-128/Squares-Dp-P0
+Opening Player-Data//2-Dp-128/Squares-Dp-P1
+Opening Player-Data//2-Dp-128/daBits-Dp-P0
+Opening Player-Data//2-Dp-128/daBits-Dp-P1
+Opening Player-Data//2-Dp-128/Inverses-Dp-P0
+Opening Player-Data//2-Dp-128/Inverses-Dp-P1
+Opening Player-Data//2-D2-40/Triples-D2-P0
+Opening Player-Data//2-D2-40/Triples-D2-P1
+Opening Player-Data//2-D2-40/Bits-D2-P0
+Opening Player-Data//2-D2-40/Bits-D2-P1
+Opening Player-Data//2-D2-40/Inputs-D2-P0-0
+Opening Player-Data//2-D2-40/Inputs-D2-P1-0
+Opening Player-Data//2-D2-40/Inputs-D2-P0-1
+Opening Player-Data//2-D2-40/Inputs-D2-P1-1
+Opening Player-Data//2-D2-40/Squares-D2-P0
+Opening Player-Data//2-D2-40/Squares-D2-P1
+Opening Player-Data//2-D2-40/daBits-D2-P0
+Opening Player-Data//2-D2-40/daBits-D2-P1
+Opening Player-Data//2-D2-40/Inverses-D2-P0
+Opening Player-Data//2-D2-40/Inverses-D2-P1

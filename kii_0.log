@@ -1,0 +1,21 @@
+Inside KII.c
+[ using our own SGX-measurement verification callback (via command line options) ]
+  - ignoring ISV_PROD_ID
+  - ignoring ISV_SVN
+
+  . Seeding the random number generator... ok
+  . Connecting to tcp/localhost/4433... failed
+  ! mbedtls_net_connect returned -68
+
+ ok
+  . Setting up the SSL/TLS structure... ok
+ ok
+  . Installing RA-TLS callback ... ok
+  . Performing the SSL/TLS handshake...Allowing quote status SW_HARDENING_NEEDED
+Writing 75 serialized bytes
+ ok
+  . Verifying peer X.509 certificate... ok
+ 75 bytes written
+
+
+ f0cf6099e629fd0bda2de3f9515ab72b'-88222337191559387830816715872691188861
